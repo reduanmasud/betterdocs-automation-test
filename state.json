@@ -1,0 +1,85 @@
+{
+  "cookies": [
+    {
+      "name": "wordpress_81e753c3c5258ad4292bd1183bd75e5c",
+      "value": "reduan%7C1707195257%7CkCRgBPlqUfVns5kzXUxg7W3hRr6pE2UQhaZPXwu7BvZ%7C64ecf0a2ab34457425edd055ea880054e99f0718fa5c111f34b995f91f120149",
+      "domain": "betterdocs.test",
+      "path": "/wp-content/plugins",
+      "expires": 1707238465.066673,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "wordpress_81e753c3c5258ad4292bd1183bd75e5c",
+      "value": "reduan%7C1707195257%7CkCRgBPlqUfVns5kzXUxg7W3hRr6pE2UQhaZPXwu7BvZ%7C64ecf0a2ab34457425edd055ea880054e99f0718fa5c111f34b995f91f120149",
+      "domain": "betterdocs.test",
+      "path": "/wp-admin",
+      "expires": 1707238465.067059,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "wordpress_test_cookie",
+      "value": "WP%20Cookie%20check",
+      "domain": "betterdocs.test",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "wordpress_logged_in_81e753c3c5258ad4292bd1183bd75e5c",
+      "value": "reduan%7C1707195257%7CkCRgBPlqUfVns5kzXUxg7W3hRr6pE2UQhaZPXwu7BvZ%7C8ddf589ca45d30a551283b9bcab30a8ed6d17f89393ddbffeb23fcbb505ba106",
+      "domain": "betterdocs.test",
+      "path": "/",
+      "expires": 1707238465.067201,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "wpus_switch_81e753c3c5258ad4292bd1183bd75e5c",
+      "value": "reduan%7C1706072065%7CojQVh1kFDCNmC8FNG2HY7EqYsgmnHmypfWLzRtUNMm7%7C82b51bef63759e5d4d75eaba9398d1c373ec4f928ce0940ff5eb544b1bc9ee82",
+      "domain": "betterdocs.test",
+      "path": "/",
+      "expires": 1706072065.067374,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "wp-wpml_current_admin_language_d41d8cd98f00b204e9800998ecf8427e",
+      "value": "en",
+      "domain": "betterdocs.test",
+      "path": "/",
+      "expires": 1706072071.213825,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "wp-settings-1",
+      "value": "libraryContent%3Dbrowse",
+      "domain": "betterdocs.test",
+      "path": "/",
+      "expires": 1737521671.214203,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "wp-settings-time-1",
+      "value": "1705985670",
+      "domain": "betterdocs.test",
+      "path": "/",
+      "expires": 1737521671.214523,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

@@ -1,0 +1,5 @@
+Notes We May Need.
+
+Node Versiton: 20.5.1
+Yarn Version: 1.22.19
+
