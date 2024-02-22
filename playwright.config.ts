@@ -40,7 +40,7 @@ export default defineConfig({
       use: { 
         ...devices['Desktop Chrome'],
         baseURL: process.env.BASE_URL ?? `https://bdautomation.resecured.io`,
-        storageState: 'state.json',
+        storageState: 'playwright/state.json',
         
       },
     },
