@@ -56,6 +56,7 @@ export  class LayoutSettings {
     option_navigation = () => this.page.locator("div.wprf-name-enable_navigation");
     option_comment = () => this.page.locator("div.wprf-name-enable_comment");
     option_credit = () => this.page.locator("div.wprf-name-enable_credit");
+    option_estimated_reading_time = () => this.page.locator("div.wprf-name-enable_estimated_reading_time");
 
 
     // For Single Doc > TOC

@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LayoutSettings } from '../pom/pages/settings/layout';
+import exp from 'constants';
 
 
 
@@ -294,6 +295,16 @@ test("Credit option test", async ({page}) => {
   await expect(settings.option_credit().getByText("Enabled").or(settings.option_credit().getByText("Disabled"))).toBeVisible();
   await expect(settings.option_credit().getByRole('checkbox')).toBeVisible();
 });
+
+
+test("Single Doc > Estimated Reading Time", async ({page}) => {
+  const settings = new LayoutSettings({page});
+  await settings.visitLayoutSettingsPage({menu: "Single Doc", sub_menu: "General"});
+
+  await expect(settings.option_estimated_reading_time().getByText("Estimated Reading Time")).toBeVisible();
+  await expect(settings.option_estimated_reading_time().getByText("Enabled").or(settings.option_estimated_reading_time().getByText("Disabled"))).toBeVisible();
+  await expect(settings.option_estimated_reading_time().getByRole("checkbox")).toBeVisible();
+})
 
 // For Single Doc > TOC
 test("Table of Contents option test", async ({page}) => {
