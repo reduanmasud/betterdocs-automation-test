@@ -500,7 +500,8 @@ test("Attachment > Attachment Label test",async ({ page }) => {
 
   await expect(settings.option_attachment_label().getByText("Attachment Label", {exact: true})).toBeVisible();
   await expect(settings.option_attachment_label().getByText("This setting changes the attachment title in single docs")).toBeVisible();
-  await expect(settings.option_attachment_label().getByRole('textbox').getByPlaceholder('Attachment Label')).toBeVisible();
+  await expect(settings.option_attachment_label().getByRole('textbox')).toBeVisible();
+  await expect(settings.option_attachment_label().getByRole('textbox')).toHaveAttribute("placeholder", "Attachment Label")
 })
 
 
@@ -510,7 +511,8 @@ test("Attachment > Attachment Default File Name Format test",async ({ page }) =>
 
   await expect(settings.option_attachment_default_file_name_format().getByText("Attachment Default File Name Format", {exact: true})).toBeVisible();
   await expect(settings.option_attachment_default_file_name_format().getByText("This setting is not applicable for external type of files")).toBeVisible();
-  await expect(settings.option_attachment_default_file_name_format().getByRole('textbox').getByPlaceholder('Attachment Default File Name Format')).toBeVisible();
+  await expect(settings.option_attachment_default_file_name_format().getByRole('textbox')).toBeVisible();
+  await expect(settings.option_attachment_default_file_name_format().getByRole('textbox')).toHaveAttribute('placeholder', "Attachment Default File Name Format")
 })
 
 test("Attachment > Show Attachment Size Option test",async ({ page }) => {
