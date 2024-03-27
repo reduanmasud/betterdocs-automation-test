@@ -37,6 +37,8 @@ async function globalSetup(config: FullConfig) {
         _try++;
     }while(title.search(TITLE) == -1 && _try <= 3)
     await page.context().storageState({path: storageState as string});
+    await page.close();
+    await browser.close();
 }
 
 export default globalSetup;
