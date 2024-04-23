@@ -484,62 +484,71 @@ test("Feedback URL option test", async ({page}) => {
 });
 
 // Single Docs > Attachment 
-test("Attachment > Show Attachment Option test",async ({ page }) => {
-  const settings = new LayoutSettings({page});
-  await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
+test.describe('Attachment Test >', () => {
 
-  await expect(settings.option_show_attachment().getByText("Show Attachment", {exact: true})).toBeVisible();
-  await expect(settings.option_show_attachment().getByText("Enabled").or(settings.option_show_attachment().getByText("Disabled"))).toBeVisible();
-  await expect(settings.option_show_attachment().getByRole('checkbox')).toBeVisible();
-})
+  test("Attachment > Show Attachment Option test",async ({ page }) => {
+    const settings = new LayoutSettings({page});
+    await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
+  
+    await expect(settings.option_show_attachment().getByText("Show Attachment", {exact: true})).toBeVisible();
+    await expect(settings.option_show_attachment().getByText("Enabled").or(settings.option_show_attachment().getByText("Disabled"))).toBeVisible();
+    await expect(settings.option_show_attachment().getByRole('checkbox')).toBeVisible();
+  })
+  
+  
+  test("Attachment > Attachment Label test",async ({ page }) => {
+    const settings = new LayoutSettings({page});
+    await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
+    if(!await settings.isAttachmentActive()) test.skip(true, "Skipped Due to attachment disabled");
 
+    await expect(settings.option_attachment_label().getByText("Attachment Label", {exact: true})).toBeVisible();
+    await expect(settings.option_attachment_label().getByText("This setting changes the attachment title in single docs")).toBeVisible();
+    await expect(settings.option_attachment_label().getByRole('textbox')).toBeVisible();
+    await expect(settings.option_attachment_label().getByRole('textbox')).toHaveAttribute("placeholder", "Attachment Label")
+  })
+  
+  
+  test("Attachment > Attachment Default File Name Format test",async ({ page }) => {
+    const settings = new LayoutSettings({page});
+    await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
+    if(!await settings.isAttachmentActive()) test.skip(true, "Skipped Due to attachment disabled");
+  
+    await expect(settings.option_attachment_default_file_name_format().getByText("Attachment Default File Name Format", {exact: true})).toBeVisible();
+    await expect(settings.option_attachment_default_file_name_format().getByText("This setting is not applicable for external type of files")).toBeVisible();
+    await expect(settings.option_attachment_default_file_name_format().getByRole('textbox')).toBeVisible();
+    await expect(settings.option_attachment_default_file_name_format().getByRole('textbox')).toHaveAttribute('placeholder', "Attachment Default File Name Format")
+  })
+  
+  test("Attachment > Show Attachment Size Option test",async ({ page }) => {
+    const settings = new LayoutSettings({page});
+    await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
+    if(!await settings.isAttachmentActive()) test.skip(true, "Skipped Due to attachment disabled");
+  
+    await expect(settings.option_show_attachment_size().getByText("Show Attachment Size", {exact: true})).toBeVisible();
+    await expect(settings.option_show_attachment_size().getByText("Enabled").or(settings.option_show_attachment_size().getByText("Disabled"))).toBeVisible();
+    await expect(settings.option_show_attachment_size().getByRole('checkbox')).toBeVisible();
+  })
+  
+  test("Attachment > Show Attachment Icon Option test",async ({ page }) => {
+    const settings = new LayoutSettings({page});
+    await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
+    if(!await settings.isAttachmentActive()) test.skip(true, "Skipped Due to attachment disabled");
+  
+    await expect(settings.option_show_attachment_icon().getByText("Show Attachment Icon", {exact: true})).toBeVisible();
+    await expect(settings.option_show_attachment_icon().getByText("Enabled").or(settings.option_show_attachment_icon().getByText("Disabled"))).toBeVisible();
+    await expect(settings.option_show_attachment_icon().getByRole('checkbox')).toBeVisible();
+  })
+  
+  test("Attachment > Open Attachment In New Tab Option test",async ({ page }) => {
+    const settings = new LayoutSettings({page});
+    await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
+    if(!await settings.isAttachmentActive()) test.skip(true, "Skipped Due to attachment disabled");
+  
+    await expect(settings.option_open_attachment_in_new_tab().getByText("Open Attachment In New Tab", {exact: true})).toBeVisible();
+    await expect(settings.option_open_attachment_in_new_tab().getByText("Enabled").or(settings.option_open_attachment_in_new_tab().getByText("Disabled"))).toBeVisible();
+    await expect(settings.option_open_attachment_in_new_tab().getByRole('checkbox')).toBeVisible();
+  })
 
-test("Attachment > Attachment Label test",async ({ page }) => {
-  const settings = new LayoutSettings({page});
-  await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
-
-  await expect(settings.option_attachment_label().getByText("Attachment Label", {exact: true})).toBeVisible();
-  await expect(settings.option_attachment_label().getByText("This setting changes the attachment title in single docs")).toBeVisible();
-  await expect(settings.option_attachment_label().getByRole('textbox')).toBeVisible();
-  await expect(settings.option_attachment_label().getByRole('textbox')).toHaveAttribute("placeholder", "Attachment Label")
-})
-
-
-test("Attachment > Attachment Default File Name Format test",async ({ page }) => {
-  const settings = new LayoutSettings({page});
-  await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
-
-  await expect(settings.option_attachment_default_file_name_format().getByText("Attachment Default File Name Format", {exact: true})).toBeVisible();
-  await expect(settings.option_attachment_default_file_name_format().getByText("This setting is not applicable for external type of files")).toBeVisible();
-  await expect(settings.option_attachment_default_file_name_format().getByRole('textbox')).toBeVisible();
-  await expect(settings.option_attachment_default_file_name_format().getByRole('textbox')).toHaveAttribute('placeholder', "Attachment Default File Name Format")
-})
-
-test("Attachment > Show Attachment Size Option test",async ({ page }) => {
-  const settings = new LayoutSettings({page});
-  await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
-
-  await expect(settings.option_show_attachment_size().getByText("Show Attachment Size", {exact: true})).toBeVisible();
-  await expect(settings.option_show_attachment_size().getByText("Enabled").or(settings.option_show_attachment_size().getByText("Disabled"))).toBeVisible();
-  await expect(settings.option_show_attachment_size().getByRole('checkbox')).toBeVisible();
-})
-
-test("Attachment > Show Attachment Icon Option test",async ({ page }) => {
-  const settings = new LayoutSettings({page});
-  await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
-
-  await expect(settings.option_show_attachment_icon().getByText("Show Attachment Icon", {exact: true})).toBeVisible();
-  await expect(settings.option_show_attachment_icon().getByText("Enabled").or(settings.option_show_attachment_icon().getByText("Disabled"))).toBeVisible();
-  await expect(settings.option_show_attachment_icon().getByRole('checkbox')).toBeVisible();
-})
-
-test("Attachment > Open Attachment In New Tab Option test",async ({ page }) => {
-  const settings = new LayoutSettings({page});
-  await settings.visitLayoutSettingsPage({menu:"Single Doc", sub_menu: "Attachments"});
-
-  await expect(settings.option_open_attachment_in_new_tab().getByText("Open Attachment In New Tab", {exact: true})).toBeVisible();
-  await expect(settings.option_open_attachment_in_new_tab().getByText("Enabled").or(settings.option_open_attachment_in_new_tab().getByText("Disabled"))).toBeVisible();
-  await expect(settings.option_open_attachment_in_new_tab().getByRole('checkbox')).toBeVisible();
 })
 
 // Single Docs > Related Docs 
