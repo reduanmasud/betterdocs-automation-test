@@ -105,6 +105,16 @@ export  class LayoutSettings {
     option_video_file_icon = () => this.page.locator("div.wprf-name-attachment_video_icon");
     option_text_file_icon = () => this.page.locator("div.wprf-name-attachment_text_icon");
     option_default_file_icon = () => this.page.locator("div.wprf-name-attachment_default_icon");
+
+    isAttachmentActive = async () => {
+        let checkbox = this.option_show_attachment().getByRole('checkbox');
+        if(checkbox &&  await checkbox.isChecked())
+        {
+            return true;
+        }
+        return false;
+    }
+    
     
 
     // For Next Next Release 
