@@ -1,0 +1,52 @@
+# Ignore node_modules
+node_modules
+.pnp
+.pnp.js
+
+# Ignore temporary files and folders
+coverage
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.log
+
+# Ignore environment variables file
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore Dockerfile and docker-compose files (if they exist in the project root)
+Dockerfile
+docker-compose.yml
+
+# Ignore build outputs
+build
+dist
+
+# Ignore IDE and editor files
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore tests and documentation
+tests
+docs
+
+# Ignore configuration files
+*.config.js
+*.config.ts
+*.yaml
+*.yml
+
+# Ignore source files
+src
+*.ts
+*.tsx

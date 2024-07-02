@@ -1,5 +1,5 @@
 {
-  "name": "BetterDocsAutomation",
+  "name": "Better_Docs_Automation",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,6 +9,10 @@
   },
   "scripts": {},
   "dependencies": {
-    "dotenv": "^16.3.1"
+    "Faker": "^0.7.2",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.2.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1"
   }
 }
