@@ -1,5 +1,5 @@
 # Base image
-FROM node:20 as base
+FROM node:20-slim as base
 
 # Update and upgrade system packages
 RUN apt-get update && \
@@ -17,7 +17,7 @@ COPY package.json yarn.lock ./
 RUN yarn install
 
 # Copy the rest of the application code
-COPY . .
+# COPY . .
 
 # Install Playwright browsers
 RUN yarn playwright install --with-deps
